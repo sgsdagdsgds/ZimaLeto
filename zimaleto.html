@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZimaLeto — шиномонтаж в Минске</title>
+<meta name="description" content="ZimaLeto — шиномонтаж в Минске: сезонная переобувка, балансировка, ремонт шин, правка дисков, аргонная сварка, заправка автокондиционеров. Цены R13–R22.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1114; --bg2:#161a1f; --card:#1b2026; --line:#2a3038;
+  --text:#eef1f4; --muted:#9aa4af;
+  --ice:#7cc8ff; --sun:#ff9d3c;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Unbounded,sans-serif;line-height:1.15;letter-spacing:-.01em}
+h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:620px}
+section{padding:84px 0}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(15,17,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:Unbounded;font-weight:800;font-size:22px}
+.logo .z{color:var(--ice)} .logo .l{color:var(--sun)}
+.links{display:flex;gap:28px;font-weight:600;font-size:15px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-main{background:linear-gradient(100deg,var(--ice),var(--sun));color:#111}
+.btn-main:hover{box-shadow:0 8px 30px rgba(124,200,255,.25)}
+.btn-ghost{border:1px solid var(--line);background:var(--card)}
+@media(max-width:820px){.links{display:none}.nav .btn{padding:10px 16px;font-size:14px}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:96px 0 88px}
+.hero::before,.hero::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(110px);opacity:.28;z-index:0}
+.hero::before{background:var(--ice);left:-180px;top:-200px}
+.hero::after{background:var(--sun);right:-200px;bottom:-260px}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:600;color:var(--muted);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:22px;background:rgba(27,32,38,.6)}
+.tag b{color:var(--sun)}
+.hero h1{font-size:clamp(38px,6.4vw,72px);font-weight:800;margin-bottom:20px}
+.hero h1 .z{color:var(--ice)} .hero h1 .l{color:var(--sun)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#cfd5db;max-width:520px;margin-bottom:32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tire{aspect-ratio:1;max-width:420px;width:100%;justify-self:center;position:relative}
+.tire svg{width:100%;height:100%;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.tire svg{animation:none}}
+.stats{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.stat b{display:block;font-family:Unbounded;font-size:26px}
+.stat span{color:var(--muted);font-size:14px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.tire{max-width:260px;order:-1}}
+
+/* calc */
+.calc{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.calc-box{margin-top:36px;display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+@media(max-width:860px){.calc-box{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:12px}
+.toggle{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:14px;padding:5px;margin-bottom:26px;border:1px solid var(--line)}
+.toggle button{all:unset;cursor:pointer;text-align:center;padding:12px 8px;border-radius:10px;font-weight:700;font-size:14px;color:var(--muted);transition:.2s}
+.toggle button.on{background:var(--text);color:#111}
+.radii{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.radii button{all:unset;cursor:pointer;text-align:center;padding:14px 0;border-radius:12px;border:1px solid var(--line);font-family:Unbounded;font-weight:700;font-size:15px;transition:.15s}
+.radii button:hover{border-color:var(--ice)}
+.radii button.on{background:var(--ice);color:#0b1520;border-color:var(--ice)}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+.result .big{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.big div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px}
+.big div.hl{border-color:var(--sun);background:linear-gradient(160deg,rgba(255,157,60,.12),transparent)}
+.big span{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.big b{font-family:Unbounded;font-size:clamp(22px,3vw,30px)}
+.ops{list-style:none}
+.ops li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.ops li:last-child{border:0}
+.ops li b{font-weight:700}
+
+/* table */
+.tabs{display:flex;gap:8px;margin:30px 0 18px;flex-wrap:wrap}
+.tabs button{all:unset;cursor:pointer;padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-weight:700;font-size:14px;color:var(--muted)}
+.tabs button.on{background:var(--text);color:#111;border-color:var(--text)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:15px}
+th,td{padding:14px 18px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);background:var(--bg2)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(124,200,255,.05)}
+td.r{font-family:Unbounded;font-weight:700}
+td.acc{color:var(--sun);font-weight:700}
+.warn{display:flex;gap:12px;margin-top:18px;padding:16px 18px;border-radius:14px;background:rgba(255,157,60,.08);border:1px solid rgba(255,157,60,.3);font-size:14px;color:#f3d6b8}
+
+/* extras */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.svc:hover{border-color:var(--ice);transform:translateY(-2px)}
+.svc .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line)}
+.svc h3{font-size:17px}
+.svc p{color:var(--muted);font-size:14px;flex:1}
+.svc .price{font-family:Unbounded;font-weight:700;font-size:20px;color:var(--sun)}
+
+/* features */
+.feat{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:600;font-size:14px}
+.chip::before{content:"✓";color:var(--ice);margin-right:8px;font-weight:800}
+
+/* contacts */
+.addr{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:36px}
+.addr .panel h3{font-size:20px;margin-bottom:8px}
+.addr .panel p{color:var(--muted);margin-bottom:6px}
+.addr .panel .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.phone{font-family:Unbounded;font-size:clamp(22px,3vw,30px);font-weight:700;display:inline-block;margin:14px 0 4px}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="z">Zima</span><span class="l">Leto</span></a>
+    <nav class="links">
+      <a href="#calc">Калькулятор</a>
+      <a href="#prices">Цены</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-main" href="tel:+375257853931">Позвонить</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="tag">Шиномонтаж · Минск · <b>R13–R22</b></div>
+      <h1><span class="z">Zima</span><span class="l">Leto</span></h1>
+      <p class="lead">Профессиональный шиномонтаж. Ваш комфорт и безопасность — наша работа!</p>
+      <div class="cta">
+        <a class="btn btn-main" href="tel:+375257853931">+375 25 785-39-31</a>
+        <a class="btn btn-ghost" href="#calc">Рассчитать стоимость</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5,0 ★</b><span>215 оценок на Яндекс Картах</span></div>
+        <div class="stat"><b>60–150 р.</b><span>переобувка 4 колёс</span></div>
+      </div>
+    </div>
+    <div class="tire" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7cc8ff"/><stop offset="1" stop-color="#ff9d3c"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="94" fill="#1b2026" stroke="#2a3038" stroke-width="2"/>
+        <g fill="#262c34">
+          <!-- tread blocks -->
+          <g id="t"><rect x="96" y="8" width="8" height="18" rx="2"/></g>
+        </g>
+        <g fill="#262c34" id="tread"></g>
+        <circle cx="100" cy="100" r="62" fill="#0f1114" stroke="url(#g)" stroke-width="3"/>
+        <g stroke="url(#g)" stroke-width="7" stroke-linecap="round">
+          <line x1="100" y1="48" x2="100" y2="82"/>
+          <line x1="149.5" y1="84" x2="117" y2="94.4"/>
+          <line x1="130.6" y1="142" x2="110.6" y2="114.6"/>
+          <line x1="69.4" y1="142" x2="89.4" y2="114.6"/>
+          <line x1="50.5" y1="84" x2="83" y2="94.4"/>
+        </g>
+        <circle cx="100" cy="100" r="16" fill="#1b2026" stroke="url(#g)" stroke-width="3"/>
+        <circle cx="100" cy="100" r="5" fill="url(#g)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="calc" id="calc">
+  <div class="wrap">
+    <h2>Сколько стоит?</h2>
+    <p class="sub">Выберите тип автомобиля и радиус колеса — покажем цены по прайсу.</p>
+    <div class="calc-box">
+      <div class="panel">
+        <div class="label">Тип автомобиля</div>
+        <div class="toggle" id="typeToggle">
+          <button data-type="car" class="on">Легковой</button>
+          <button data-type="suv">Внедорожник / бус</button>
+        </div>
+        <div class="label">Радиус</div>
+        <div class="radii" id="radii"></div>
+        <p class="note" id="typeNote">Легковые: седан, купе, хэтчбек и т.д.</p>
+      </div>
+      <div class="panel result">
+        <div class="label" id="resTitle">Легковой · R16</div>
+        <div class="big">
+          <div><span>Комплекс 1 колеса</span><b id="c1">—</b></div>
+          <div class="hl"><span>Комплекс 4 колёс</span><b id="c4">—</b></div>
+        </div>
+        <ul class="ops" id="ops"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <h2>Прайс на шиномонтаж</h2>
+    <p class="sub">Цена каждой операции указана за одно колесо.</p>
+    <div class="tabs" id="tblTabs">
+      <button data-type="car" class="on">Легковые</button>
+      <button data-type="suv">Пикапы, внедорожники, микроавтобусы</button>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Радиус</th><th>Снятие / установка</th><th>Демонтаж / монтаж</th><th>Балансировка</th><th>Комплекс 1 колеса</th><th>Комплекс 4 колёс</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="warn"><span>⚠️</span><span>Внимание! За сломанные гайки, болты и шпильки, в связи с их износом, работники шиномонтажа ответственности не несут.</span></div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:20px">
+  <div class="wrap">
+    <h2>Дополнительные услуги</h2>
+    <p class="sub">Ремонтируем шины и диски, заправляем кондиционеры.</p>
+    <div class="grid">
+      <div class="svc">
+        <div class="ic">🛞</div>
+        <h3>Ремонт шин</h3>
+        <p>Боковые порезы, грыжи — любой сложности.</p>
+        <div class="price" style="font-size:16px">Цену уточняйте</div>
+      </div>
+      <div class="svc">
+        <div class="ic">🔧</div>
+        <h3>Правка / раскатка дисков</h3>
+        <p>Восстановление геометрии диска.</p>
+        <div class="price">от 50 р.</div>
+      </div>
+      <div class="svc">
+        <div class="ic">⚡</div>
+        <h3>Аргонная сварка дисков</h3>
+        <p>Сварка дисков аргоном.</p>
+        <div class="price">от 30 р.</div>
+      </div>
+      <div class="svc">
+        <div class="ic">❄️</div>
+        <h3>Заправка автокондиционера</h3>
+        <p>Заправка хладагентом.</p>
+        <div class="price">от 20 р. <small style="font-size:13px;color:var(--muted);font-family:Manrope">/ 100 г</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feat">
+  <div class="wrap">
+    <h2>Почему удобно</h2>
+    <div class="chips">
+      <span class="chip">Сезонный шиномонтаж</span>
+      <span class="chip">Легковые, джипы, минивэны, бусы</span>
+      <span class="chip">Хранение шин</span>
+      <span class="chip">Вулканизация</span>
+      <span class="chip">Утилизация шин</span>
+      <span class="chip">Гарантия</span>
+      <span class="chip">Предварительная запись</span>
+      <span class="chip">Оплата картой, наличными, безнал</span>
+      <span class="chip">Скидки льготным категориям</span>
+      <span class="chip">Дисконтная система</span>
+      <span class="chip">Wi-Fi</span>
+      <span class="chip">Можно с собакой</span>
+      <span class="chip">Доступно на инвалидной коляске</span>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <h2>Контакты</h2>
+    <p class="sub">Звоните, чтобы записаться заранее.</p>
+    <a class="phone" href="tel:+375257853931">+375 25 785-39-31</a>
+    <div class="addr">
+      <div class="panel">
+        <h3>ул. Городецкая, 86</h3>
+        <p>Минск</p>
+        <div class="row">
+          <a class="btn btn-main" href="https://yandex.by/maps/org/zimaleto/183629851085/" target="_blank" rel="noopener">Маршрут в Яндекс Картах</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>ул. Кнорина, 50а/2</h3>
+        <p>Первомайский район, Минск, 1 этаж</p>
+        <p>Ежедневно с 08:30 до 20:00</p>
+        <div class="row">
+          <a class="btn btn-main" href="https://2gis.by/minsk/firm/70000001057495328" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:20px">
+      <a class="btn btn-ghost" href="https://www.instagram.com/zimaleto_shinomontazh" target="_blank" rel="noopener">Instagram @zimaleto_shinomontazh</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© ZimaLeto — шиномонтаж в Минске</span>
+    <span>ООО «АВАНГАРДШИНА», УНП 193621530</span>
+  </div>
+</footer>
+
+<script>
+// Прайс: цена одной операции (снятие, установка, демонтаж, монтаж, балансировка) за колесо.
+// Комплекс 1 колеса = 5 операций, комплекс 4 колёс = 4 комплекса — как в прайсе.
+const PRICES = {
+  car: {13:3,14:3.25,15:3.5,16:3.75,17:4.25,18:4.5,19:5.5,20:6,21:6.5,22:7},
+  suv: {13:3,14:3.25,15:3.75,16:4,17:4.5,18:5,19:6,20:6.5,21:7,22:7.5}
+};
+const R = [13,14,15,16,17,18,19,20,21,22];
+const fmt = n => (Number.isInteger(n) ? n : n.toFixed(2).replace(/0$/,'')).toString().replace('.',',') + ' р.';
+const names = {car:'Легковой', suv:'Внедорожник / бус'};
+const notes = {car:'Легковые: седан, купе, хэтчбек и т.д.', suv:'Пикапы, внедорожники, микроавтобусы и т.д. Для R13–R14 цена одинакова для всех категорий.'};
+let type = 'car', rad = 16, tblType = 'car';
+
+const radii = document.getElementById('radii');
+R.forEach(r => {
+  const b = document.createElement('button');
+  b.textContent = 'R' + r; b.dataset.r = r;
+  b.onclick = () => { rad = r; render(); };
+  radii.appendChild(b);
+});
+
+document.querySelectorAll('#typeToggle button').forEach(b => b.onclick = () => { type = b.dataset.type; render(); });
+document.querySelectorAll('#tblTabs button').forEach(b => b.onclick = () => { tblType = b.dataset.type; renderTable(); });
+
+function render(){
+  document.querySelectorAll('#typeToggle button').forEach(b => b.classList.toggle('on', b.dataset.type === type));
+  radii.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.r === rad));
+  const p = PRICES[type][rad];
+  document.getElementById('resTitle').textContent = names[type] + ' · R' + rad;
+  document.getElementById('typeNote').textContent = notes[type];
+  document.getElementById('c1').textContent = fmt(p*5);
+  document.getElementById('c4').textContent = fmt(p*20);
+  document.getElementById('ops').innerHTML =
+    ['Снятие колеса','Установка колеса','Демонтаж шины с диска','Монтаж шины на диск','Балансировка колеса']
+    .map(o => `<li><span>${o}</span><b>${fmt(p)}</b></li>`).join('');
+}
+function renderTable(){
+  document.querySelectorAll('#tblTabs button').forEach(b => b.classList.toggle('on', b.dataset.type === tblType));
+  document.getElementById('tbody').innerHTML = R.map(r => {
+    const p = PRICES[tblType][r];
+    return `<tr><td class="r">R${r}</td><td>${fmt(p)}</td><td>${fmt(p)}</td><td>${fmt(p)}</td><td>${fmt(p*5)}</td><td class="acc">${fmt(p*20)}</td></tr>`;
+  }).join('');
+}
+
+// протектор шины
+const tread = document.getElementById('tread');
+for (let i = 0; i < 36; i++) {
+  const u = document.createElementNS('http://www.w3.org/2000/svg','use');
+  u.setAttribute('href','#t'); u.setAttribute('transform',`rotate(${i*10} 100 100)`);
+  tread.appendChild(u);
+}
+render(); renderTable();
+</script>
+</body>
+</html>
